@@ -13,6 +13,7 @@ import java.io.StringReader;
 import java.util.*;
 
 public class Convert {
+
     //converts a prefix exp to postfix
     public static String fromPrefixToPostfix(String expression) throws SyntaxError, IOException {
         // tokenize the string containing the exp
@@ -48,7 +49,8 @@ public class Convert {
         } else { //will add empty string to stack without this
             throw new SyntaxError("Please enter something!");
         }
-    }
+    } // end fromPrefixToPostfix
+
     //converts a postfix exp to prefix
     public static String fromPostfixToPrefix(String expression) throws IOException, SyntaxError {
         if(!expression.equals("")) {
@@ -60,7 +62,7 @@ public class Convert {
                 if(!isOperator(token)) {
                     operandStack.push(token + " ");
                 } else { // if there are operands, push two operands off the stack and create a
-                        // string with the operator followed by two operands
+                    // string with the operator followed by two operands
                     try {
                         String operandTwo = operandStack.pop();
                         String operandOne = operandStack.pop();
@@ -81,7 +83,7 @@ public class Convert {
         } else { //will add empty string to stack without this
             throw new SyntaxError("Please enter something!");
         }
-    }
+    } // end fromPostfixToPrefix
 
 
     //takes a String and tokenizes it into an ArrayList of ints, chars, and Strings
@@ -104,7 +106,7 @@ public class Convert {
             }
         }
         return tokenList;
-    }
+    } // end tokenizeExpression
 
     //takes a String and checks the first element and compares
 // against cases of known operators
@@ -118,5 +120,5 @@ public class Convert {
                 return true;
         }
         return false;
-    }
-}
+    } // end isOperator
+} // end class Convert

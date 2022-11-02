@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 
 public class Main extends JFrame implements ActionListener {
+
+    // private attributes for buttons, labels and text fields
     private final JLabel enterExp = new JLabel("Enter Expression");
     private final JTextField expField = new JTextField(20);
     private final JButton prefixPostfix = new JButton("Prefix to Postfix");
@@ -25,7 +27,7 @@ public class Main extends JFrame implements ActionListener {
     public static void main(String[] args) {
         Main frame = new Main();
         frame.setVisible(true);
-    }
+    } // end main
 
     public Main() {
         super("Expression Converter");
@@ -39,7 +41,7 @@ public class Main extends JFrame implements ActionListener {
         contentPane.add(middlePanel(), BorderLayout.CENTER);
         contentPane.add(bottomPanel(), BorderLayout.SOUTH);
         setContentPane(contentPane);
-    }
+    } // end constructor Main
 
     private JPanel topPanel() {
         JPanel topPanel = new JPanel();
@@ -79,5 +81,5 @@ public class Main extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
 
-    }
-}
+    } // end actionPerformed
+} // end class Main
