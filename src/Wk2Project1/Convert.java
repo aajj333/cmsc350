@@ -27,7 +27,7 @@ public class Convert {
                     operandStack.push(token + " ");
                 } else {
                     try {       // pop two operands off stack
-                        // create string with two operators followed by operator
+                        // create string with two operands followed by operator
                         String operandOne = operandStack.pop();
                         String operandTwo = operandStack.pop();
                         String innerExpression = operandOne + operandTwo + token + " ";
